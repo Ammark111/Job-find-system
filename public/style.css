@@ -1,0 +1,7 @@
+nav {
+    background-color: #ff3232b7;
+}
+
+
+
+@extends('layout.app')
