@@ -23,10 +23,10 @@ Proffesionalism Details
                                     <tr>
                                         <th class="p-3">#</th>
                                         <th class="p-3">Institute</th>
-                                        <th class="p-3">Level</th>
-                                        <th class="p-3">Program</th>
+                                        <th class="p-3">Course</th>
+                                        <th class="p-3">Year from</th>
+                                        <th class="p-3">To</th>
                                         <th class="p-3">Country</th>
-                                        <th class="p-3">Year</th>
                                         <th class="p-3">Certificate</th>
                                         <th class="p-3">Action</th>
                                         <th class="p-3">Status</th>

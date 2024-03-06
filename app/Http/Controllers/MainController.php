@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\personal;
 use App\Models\accademic;
+use App\Models\language;
+use App\Models\working;
 
 class MainController extends Controller
 {
@@ -45,7 +47,7 @@ class MainController extends Controller
             $post -> country = $req -> country;
             $post -> year = $req -> year;
             $post -> save();
-            return redirect() -> back()->with('success', 'Accademic details added successfully');
+            return redirect() -> back()->with('success', 'Accademic Details Added successfully');
         }
 
         $datas = accademic::all();
@@ -55,21 +57,58 @@ class MainController extends Controller
     public function deleteAccademic($id) {
         $data = accademic::find($id);
         $data -> delete();
-        return redirect()->back()->with('danger', 'Accademic details removed successfully');
+        return redirect()->back()->with('danger', 'Accademic Qualification Details Removed successfully');
     }
 
     public function professional() {
         return view('pages.professional');
     }
 
-    public function language() {
-        return view('pages.language');
+    public function language(Request $req) {
+        if($req->method()=='POST') {
+            $post = new language();
+            $post->language_name = $req->language_name;
+            $post->speak = $req->speak;
+            $post->read = $req->read;
+            $post->write = $req->write;
+            $post -> save();
+            return redirect()->back()->with('success', 'Language Proficiency Details added successfully');
+        }
+
+        $datas = language::all();
+        return view('pages.language',compact('datas'));
     }
 
-    public function working() {
-        return view('pages.working');
+    public function deletelanguage($id) {
+        $data = language::find($id);
+        $data -> delete();
+        return redirect()->back()->with('danger', 'Language Proficiency Details removed successfully');
     }
 
+    public function working(Request $req) {
+        if ($req->method() == 'POST') {
+            $post = new working();
+            $post->institute = $req->institute;
+            $post->address = $req->address;
+            $post->job = $req->job;
+            $post->duty = $req->duty;
+            $post->Supervisor_name = $req->Supervisor_name;
+            $post->Supervisor_phone = $req->Supervisor_phone;
+            $post->start_date = $req->start_date;
+            $post->end_date = $req->end_date;
+            $post->save();
+            return redirect()->back()->with('success','Work Experience Details Added Successfully');  
+        }
+
+        $datas =working::all();
+        return view('pages.working',compact('datas'));
+    }
+
+    public function deleteworking($id) {
+        $data = working::find($id);
+        $data -> delete();
+        return redirect()->back()->with('danger', 'Working Expirience Details removed successfully');
+    }
     public function training() {
         return view('pages.training');
     }

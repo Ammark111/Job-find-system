@@ -22,8 +22,15 @@ Route::post('/academic',[MainController::class, 'academic'])->name('academic');
 Route::get('deleteAccademic/{id}',[MainController::class,'deleteAccademic'])->name('deleteAccademic');  
 
 Route::get('/professional',[MainController::class, 'professional'])->name('professional');
+
 Route::get('/language',[MainController::class, 'language'])->name('language');
+Route::post('/language',[MainController::class, 'language'])->name('language');
+Route::get('/deletelanguage/{id}',[MainController::class, 'deletelanguage'])->name('deletelanguage');
+
 Route::get('/working',[MainController::class, 'working'])->name('working');
+Route::post('/working',[MainController::class, 'working'])->name('working');
+Route::get('/deleteworking/{id}',[MainController::class, 'deleteworking'])->name('deleteworking');
+
 Route::get('/training',[MainController::class, 'training'])->name('training');
 Route::get('/computer',[MainController::class, 'computer'])->name('computer');
 Route::get('/referees',[MainController::class, 'referees'])->name('referees');
