@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\user;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -13,7 +14,7 @@ class AuthController extends Controller
 
             $request->validate([
                 'password' => 'required',
-                'phone' => 'required|max:10 | min:10 |exists:users'
+                'phone' => 'required|max:10 | min:0 |exists:users'
             ]);
             $user = User::where('phone', $request->phone)->first();
             if(!Hash::check($request->password,$user->password)){
@@ -42,5 +43,11 @@ class AuthController extends Controller
         $post -> password = hash::make($user -> password);
         $post -> save();
         return redirect('/login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

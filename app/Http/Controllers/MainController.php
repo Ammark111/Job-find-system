@@ -7,6 +7,11 @@ use App\Models\personal;
 use App\Models\accademic;
 use App\Models\language;
 use App\Models\working;
+use App\Models\training;
+use App\Models\computer;
+use App\Models\attachment;
+use App\Models\referee;
+use App\Models\sample;
 
 class MainController extends Controller
 {
@@ -18,24 +23,27 @@ class MainController extends Controller
             return view('pages.dashboard');
     }
 
-    public function personal() {
-        return view('pages.personal');
+    public function personal(Request $req) {
+        // if(request()->isMethod('post')) {
+        if($req->method()=='POST') {
+            $post = new personal();
+            $post->full_name = $req->name;
+            $post->gender = $req->gender;
+            $post->dob = $req->dob;
+            $post->nation = $req->nation;
+            $post->email= $req->email;
+            $post->adress = $req->adress;
+            $post->user_id = auth()->id();
+            $post -> save();
+            return redirect()->back()->with('success', 'Personal Details Added successfully');
+        }
+
+        $datas = personal::where('user_id',auth()->id())->get();
+        return view('pages.personal',compact('datas'));
     }
 
     public function addpersonal(Request $req) {
-        $post = new personal();
-        $post->First_name = $req->fname;
-        $post->middle_name = $req->mname;
-        $post->last_name = $req->lname;
-        $post->gender = $req->gender;
-        $post->dob = $req->dob;
-        $post->nation = $req->nation;
-        $post->phone = $req->phone;
-        $post->email= $req->email;
-        $post->adress = $req->adress;
-        // return $post;
-        $post -> save();
-        return redirect()->back();
+    
     }
 
     public function academic(Request $req) {
@@ -46,11 +54,12 @@ class MainController extends Controller
             $post -> program = $req -> program;
             $post -> country = $req -> country;
             $post -> year = $req -> year;
+            $post->user_id = auth()->id(); 
             $post -> save();
             return redirect() -> back()->with('success', 'Accademic Details Added successfully');
         }
 
-        $datas = accademic::all();
+        $datas = accademic::where('user_id',auth()->id())->get();
         return view('pages.academic',compact('datas'));
     }
 
@@ -85,6 +94,11 @@ class MainController extends Controller
         return redirect()->back()->with('danger', 'Language Proficiency Details removed successfully');
     }
 
+    public function editlanguage($id) {
+        $data = language::find($id);
+        return view('pages.edit.editlanguage',compact('data'));
+    }
+
     public function working(Request $req) {
         if ($req->method() == 'POST') {
             $post = new working();
@@ -109,20 +123,87 @@ class MainController extends Controller
         $data -> delete();
         return redirect()->back()->with('danger', 'Working Expirience Details removed successfully');
     }
-    public function training() {
-        return view('pages.training');
+    public function training(Request $req) {
+        if ($req->method() == 'POST') {
+            $post = new training();
+            $post->training_name = $req->training_name;
+            $post->description = $req->description;
+            $post->institution = $req->institution;
+            $post->start_date = $req->start_date;
+            $post->end_date = $req->end_date;
+            $post->save();
+            return redirect()->back()->with('success','Training $ workshop Details Added Successfully');
+        }
+
+        $datas = training::all();
+        return view('pages.training',compact('datas'));
     }
 
-    public function computer() {
-        return view('pages.computer');
+    public function deletetraining($id) {
+        $data = training::find($id);
+        $data -> delete();
+        return redirect()->back()->with('danger', 'Training $ workshop Details removed successfully');
     }
 
-    public function referees() {
-        return view('pages.referees');
+    public function computer(Request $req) {
+        if($req->method() == 'POST') {
+            $post = new computer();
+            $post->computer_skill = $req->computer_skill;
+            $post->level = $req->level;
+            $post -> save();
+            return redirect()->back()->with('success', 'Computer Skill Details added successfully');
+        }
+
+        $datas= computer::all();
+        return view('pages.computer',compact('datas'));
     }
 
-    public function other() {
-        return view('pages.other');
+    public function deletecomputer($id) {
+        $data = computer::find($id);
+        $data -> delete();
+        return redirect()->back()->with('danger', 'Computer Skill Details removed successfully');
+    }
+
+    public function referees(Request $req) {
+        if($req->method() == 'POST') {
+            $post = new referee();
+            $post->full_name = $req->full_name;
+            $post->institute = $req->institute;
+            $post->position = $req->position;
+            $post->phone = $req->phone;
+            $post->email = $req->email;
+            $post->address = $req->address;
+            $post -> save();
+            return redirect()->back()->with('success', 'Referee Details added successfully');
+        }
+
+        $datas = referee::all();
+        return view('pages.referees',compact('datas'));
+    }
+
+    public function deletereferees($id) {
+        $data = referee::find($id);
+        $data -> delete();
+        return redirect()->back()->with('danger','Referee Details removed successfully');
+    }
+
+    public function other(Request $req) {
+        if($req->method() == 'POST') {
+            $post = new attachment();
+            $post->attachment = $req-> other;
+            $post -> save();
+            return redirect()->back()->with('success', 'Other Attachment Details added successfully');
+        }
+    
+        // $data = attachment::where('type','Other')->get();
+        $datas = attachment::all();
+        return view('pages.other',compact('datas')); 
+    }
+
+    public function deleteother($id) {
+        $data = attachment::find($id);
+        $data -> delete();
+        return redirect()->back()->with('danger', 'Other Attachment Details removed successfully');
     }
 
     public function declaration() {

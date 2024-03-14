@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('accademics', function (Blueprint $table) {
+        Schema::create('samples', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('institute_name');
-            $table->string('level');
-            $table->string('program');
-            $table->string('country');
-            $table->string('year');
+            $table->string('name');
+            $table->string('age');
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('accademics');
+        Schema::dropIfExists('samples');
     }
 };

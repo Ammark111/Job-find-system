@@ -5,15 +5,13 @@
 @endsection
 
 @section('content')
+@include('layout.navbar')
 <div class="body" style="">
     <div style="background-color: #061f36b7;  display: flex;  align-items: center; height: 100vh;">
-    <div class="details bg-danger" style="width: 100vw;">
-    
-    </div>
-    <div class="container d-flex justify-content-center align-item-center;" style="background-color: #061f36b7; height: 100%;">
-        <form  action="{{ route('newuser')}}" method="POST" class="p-5 mt-5" style=" width: 500px">
+    <div class="contaner d-flex justify-content-center align-item-center;" style="background-color: #061f36b7; height: 100%; width: 100%;">
+        <form  action="{{ route('newuser')}}" method="POST" class="p-5" style="margin-top: 7em;">
         @csrf
-        <h1 class="h1 mb-4" style="font-size: 50px; color: white;">Register your new account</h1>
+            <h1 class="h1 mb-4" style="font-size: 50px; color: white;">Register your new account</h1>
            <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Phone Number</label>
                 <input type="number" class="form-control" name="phone" placeholder="0XXX XXX XXX">
@@ -44,7 +42,6 @@
         background-size: cover;
         background-position: center;
         background-color: #061f3683;
-       
     }
 
     label {

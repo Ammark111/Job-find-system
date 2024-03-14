@@ -5,6 +5,9 @@ Training & Workshop Details
 
 @endsection
 @section('content')
+@include('layout.footer')
+@include('layout.success')
+@include('layout.danger')
 <div class="main" style=">
     <div class="contain">
         <div class="body">
@@ -33,14 +36,18 @@ Training & Workshop Details
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php 
+                                        $id = 1;
+                                    @endphp
+                                    @foreach($datas as $data)
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{ $id }}</td>
+                                        <td>{{$data->training_name}}</td>
+                                        <td>{{$data->description}}</td>
+                                        <td>{{$data->institution}}</td>
+                                        <td>Not yet</td>
+                                        <td>{{$data->start_date}}</td>
+                                        <td>{{$data->end_date}}</td>
                                         <td>
                                             <div class="d-flex" style="height: 30px;">
                                                 <div class="bg-primary">
@@ -52,7 +59,7 @@ Training & Workshop Details
                                                     </a>
                                                 </div>
                                                 <div class="bg-danger">
-                                                    <a href="" class="btn btn-danger" style="height: 30px;">
+                                                    <a href="{{ url('deletetraining/'.$data->id)}}" class="btn btn-danger" style="height: 30px;">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-trash pb-2" viewBox="0 0 16 16">
                                                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
                                                             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
@@ -62,6 +69,10 @@ Training & Workshop Details
                                             </div>
                                         </td>
                                     </tr>
+                                    @php 
+                                        $id ++;
+                                    @endphp
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -73,7 +84,7 @@ Training & Workshop Details
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <form action="{{ route('academic')}}" method="POST">
+                        <form action="{{ route('training')}}" method="POST">
                             <h4></h4>
                             @csrf
                             <div class="mb-3">

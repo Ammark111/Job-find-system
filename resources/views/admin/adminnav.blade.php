@@ -1,7 +1,7 @@
 @extends('layout.app')
 <div class="nav d-flex justify-content-around align-items-center" style="height: 4.5em; box-shadow: 0px 5px 4px grey;">
     <div class="ms-5">
-        @include('layout.sidenav')
+        @include('admin.adminsidenav')
     </div>
     <div>
     <nav class="navbar navbar-expand-lg navbar-light">

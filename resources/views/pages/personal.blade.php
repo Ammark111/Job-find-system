@@ -1,16 +1,17 @@
 @extends('layout.app')
 @section('title')
 
-Proffesionalism Details
+Personal Details
 
 @endsection
 @section('content')
+@include('layout.footer')
 <div class="main" style=">
     <div class="contain">
         <div class="body">
             @include('layout.nav')
             <div class="container mt-5">
-                <h3 class="mt-5`">Proffesionalism Details</h3>
+                <h3 class="mt-5`">Personal Details</h3>
                 <hr>
                 <div class="detail mt-5" style="background-color: white;">
                         <div class="" style="height: 4px; border-radius: 3px; background-color: rgb(24, 45, 49);"></div>
@@ -22,25 +23,18 @@ Proffesionalism Details
                                 <thead>
                                     <tr>
                                         <th class="p-3">#</th>
-                                        <th class="p-3">Institute</th>
-                                        <th class="p-3">Level</th>
-                                        <th class="p-3">Program</th>
-                                        <th class="p-3">Country</th>
-                                        <th class="p-3">Year</th>
-                                        <th class="p-3">Certificate</th>
+                                        <th class="p-3">Full Name</th>
+                                        <th class="p-3">Gender</th>
                                         <th class="p-3">Action</th>
                                         <th class="p-3">Status</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody  style="margin-bottom: 5em;">
+                                    @foreach($datas as $data)
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>Not yet</td>
+                                        <td>1</td>
+                                        <td>{{$data -> full_name}}</td>
+                                        <td>{{$data -> gender}}</td>
                                         <td>
                                             <div class="d-flex" style="height: 30px;">
                                                 <div class="bg-primary">
@@ -62,6 +56,7 @@ Proffesionalism Details
                                             </div>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -69,36 +64,38 @@ Proffesionalism Details
                 </div>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
-                        <h5 id="offcanvasRightLabel">Add New Academic Qualification</h5>
+                        <h5 id="offcanvasRightLabel">Add Your Personal Details</h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <form action="{{ route('academic')}}" method="POST">
-                            <h4></h4>
+                        <form action="{{ route('personal')}}" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label class="form-label"><b>Institute name</b></label>
-                                <input type="text" class="form-control" name="institute_name" placeholder="Enter institute name">
+                                <label class="form-label"><b>Full Name</b></label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter Full Name">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label"><b>Level</b></label>
-                                <input type="text" class="form-control" name="level" placeholder="choose bellow">
+                                <label class="form-label"><b>Gender</b></label>
+                                <select name="gender" id="" class="form-control">
+                                    <option value="Male">Male</opfemion>
+                                    <option value="Female">Female</option>
+                            </select>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label"><b>Program name</b></label>
-                                <input type="text" class="form-control" name="program" placeholder="">
+                            <label class="form-label"><b>Date of Birth</b></label>
+                                <input type="date" class="form-control" name="dob" placeholder=" Date of Birth" >
                             </div>
                             <div class="mb-3">
-                                <label class="form-label"><b>Country</b></label>
-                                <input type="text" class="form-control" name="country" placeholder="Enter country">
+                                <label class="form-label"><b>Nationallity</b></label>
+                                <input type="text" class="form-control" name="nation" placeholder="Nationality" >
                             </div>
                             <div class="mb-3">
-                                <label class="form-label"><b>Year</b></label>
-                                <input type="text" class="form-control" name="year" placeholder="Enter year">
+                            <label class="form-label"><b>Email Address</b></label>
+                                <input type="email" class="form-control" name="email" placeholder="Email Adress">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label"><b>Upload certificate</b></label>
-                                <input type="file" class="form-control" name="image">
+                                <label class="form-label"><b>Post Address</b></label>
+                                <input type="text" class="form-control" name="adress" placeholder="P.O.Box XXXXX">
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary mt-2">Save Details</button>
@@ -116,46 +113,3 @@ Proffesionalism Details
     }    
 </style>
 @endsection
-<!-- <div class="modal-body">
-        <div class="container">
-            <form  action="{{ Route('addpersonal')}}" method="POST" class="container mt-3">
-                @csrf
-                <label for="exampleInputEmail1" class="form-label mt-3"><b>Full names</b></label>
-                <div class="forminput    justify-content-around">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="fname" placeholder=" First Name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="mname" placeholder=" Middle Name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="lname" placeholder=" Last Name" >
-                    </div>
-                </div>
-                <label for="exampleInputEmail1" class="form-label"><b>Status</b></label>
-                <div class="forminput justify-content-around">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="gender" placeholder="Gender" >
-                    </div>
-                    <div class="mb-3">
-                        <input type="date" class="form-control" name="dob" placeholder=" Date of Birth" >
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="nation" placeholder="Nationality" >
-                    </div>
-                </div>
-                <label for="exampleInputEmail1" class="form-label"><b>Contact Details</b></label>
-                <div class="forminput justify-content-around">
-                    <div class="mb-3">
-                        <input type="number" class="form-control" name="phone" placeholder="Phone Eg.0XXX XXX XXX" >
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" name="email" placeholder="Email Adress">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="adress" placeholder="P.O.Box XXXXX">
-                    </div>
-                </div>
-            </form>
-        </div>
-      </div> -->

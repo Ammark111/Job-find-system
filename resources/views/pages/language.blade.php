@@ -5,28 +5,9 @@ Language Proficiency
 
 @endsection
 @section('content')
-@if(session('success'))
-    <div id="success-message" style="position: fixed; top: 10px; right: 2em; width: auto; height: 50px; border-radius: 3px; background-color: #46e753b7;">
-            <p style="padding: 10px;">  {{ session('success') }}</p>
-    </div>
-    <script>
-        setTimeout(function() {
-            var successMessage = document.getElementById('success-message');
-            successMessage.style.display = 'none';
-        }, 5000);
-    </script>
-@endif
-@if(session('danger'))
-    <div id="danger-message" style="position: fixed; top: 10px; right: 2em; width: auto; height: 50px; border-radius: 3px; background-color: #ff3232b7;">
-            <p style="padding: 10px;">  {{ session('danger') }}</p>
-    </div>
-    <script>
-        setTimeout(function() {
-            var successMessage = document.getElementById('danger-message');
-            successMessage.style.display = 'none';
-        }, 5000);
-    </script>
-@endif
+@include('layout.footer')
+@include('layout.success')
+@include('layout.danger')
 <div class="main" style=">
     <div class="contain">
         <div class="body">
@@ -66,7 +47,7 @@ Language Proficiency
                                         <td>
                                             <div class="d-flex" style="height: 30px;">
                                                 <div class="bg-primary">
-                                                    <a href="" class="btn btn-PRIMARY" style="height: 30px;">
+                                                    <a href="{{ url('editlanguage/'.$data->id)}}" class="btn btn-primary" style="height: 30px;" data-bs-toggle="offcanvas" aria-controls="offcanvasRight" data-bs-target="#editoffcanvasRight_{{ $data->id }}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-eye pb-2" viewBox="0 0 16 16">
                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
@@ -87,6 +68,7 @@ Language Proficiency
                                     @php 
                                         $id ++;
                                     @endphp
+                                    @include('pages.edit.editlanguage')
                                     @endforeach
                                 </tbody>
                             </table>
@@ -134,6 +116,7 @@ Language Proficiency
         </div>
     </div>
 </div>
+@include('pages.edit.editlanguage')
 <style>
     tr,td,th  {
         border: 1px solid black;
