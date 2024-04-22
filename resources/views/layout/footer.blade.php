@@ -1,5 +1,4 @@
-@extends('layout.app')
-<footer>
+<!-- <footer>
     <div class="center">
         <p class="pt-2">
             Copyright @2024 By <b>Mark</b>
@@ -8,7 +7,7 @@
 </footer>
 <style>
     footer {
-        width: 100vw;
+        width: 100%;
         height: 3em;
         position: fixed;
         bottom: 0;
@@ -16,4 +15,4 @@
         box-shadow: 2px 0px 5px grey;
         background-color: #fff;
     }
-</style>
+</style> -->

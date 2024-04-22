@@ -5,21 +5,17 @@ Proffesionalism Details
 
 @endsection
 @section('content')
-@include('layout.footer')
-<div class="main" style=">
     <div class="contain">
         <div class="body">
-            @include('layout.nav')
             <div class="container mt-5">
                 <h3 class="mt-5`">Proffesionalism Details</h3>
                 <hr>
-                <div class="detail mt-5" style="background-color: white;">
-                        <div class="" style="height: 4px; border-radius: 3px; background-color: rgb(24, 45, 49);"></div>
-                        <div class="button d-flex justify-content-end align-items-center" style="height: 3.5em; box-shadow: 0px 5px 5px grey;">
+                <div class="detail mt-3" style="background-color: white;">
+                        <div class="button d-flex justify-content-end align-items-center" style="height: 3.5em;">
                             <button class="btn btn-primary me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><b>+</b> ADD</button>
                         </div>
                         <div class="container">
-                            <table class="table mt-4"  style="border: 1px solid black;">
+                            <table class="table mt-4">
                                 <thead>
                                     <tr>
                                         <th class="p-3">#</th>
@@ -110,10 +106,4 @@ Proffesionalism Details
             </div>
         </div>
     </div>
-</div>
-<style>
-    tr,td,th  {
-        border: 1px solid black;
-    }    
-</style>
 @endsection

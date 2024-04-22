@@ -116,3 +116,96 @@ Proffesionalism Details
     }    
 </style>
 @endsection
+
+
+
+
+
+
+
+
+
+<div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{$user->person -> full_name}} Details</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <h4>Personal Details</h4>
+                                                        <div class="d-flex justify-content-around mt-5 flex-wrap">
+                                                            <div class="detail">
+                                                                <p><b>Full Name : </b> {{$user->person -> full_name}}</p>
+                                                                <p><b>Gender : </b> {{$user->person -> gender}}</p>
+                                                                <p><b>Date Of Birth : </b> {{$user->person -> dob}}</p>
+                                                                <p><b>Nationality : </b> {{$user->person -> nation}}</p>
+                                                                <p><b>Email Address : </b> {{$user->person -> email}}</p>
+                                                                <p><b>Address : </b> {{$user->person -> adress}}</p>
+                                                            </div>
+                                                            <div class="passport bg-dark" style="width:230px; height:230px;">
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- <form action="">
+                                                            <div class="mb3">
+                                                                <select name="status" id="" class="form-control">
+                                                                    <option value="Verified">Verified</option>
+                                                                    <option value="Error">Error</option>
+                                                                </select>
+                                                                <button class="btn btn-primary">Submit</button>
+                                                            </div>
+                                                        </form> -->
+                                                        <hr>
+                                                        <div>
+                                                            <table>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            hello
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                            <h4>Academic Details</h4>
+                                                            @foreach($user->accademics??[] as $academic)
+                                                                <div>
+                                                                    <p><b>Institute Name : </b> {{$academic -> institute_name}}</p>
+                                                                    <p><b>level : </b> {{$academic -> level}}</p>
+                                                                    <p><b>Program : </b> {{$academic -> program}}</p>
+                                                                    <p><b>Country : </b> {{$academic -> country}}</p>
+                                                                    <p><b>Year : </b> {{$academic -> year}}</p>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                        <hr>
+                                                        <div class="mt-5">
+                                                            <h4>Language Proficincy Details</h4>
+                                                            @foreach($user->languages??[] as $language)
+                                                                <p><b>Language Name : </b> {{$language -> language_name}}</p>
+                                                                <p><b>Speak : </b> {{$language -> speak}}</p>
+                                                                <p><b>Read : </b> {{$language -> read}}</p>
+                                                                <p><b>Write : </b> {{$language -> read}}</p>
+                                                            @endforeach
+                                                        </div>
+                                                        <div>
+                                                            <h4>Working &Training Details</h4>
+                                                            <div class="container">
+                                                                jhhhhjktjfhygjyjtr
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <h4>Academic Details</h4>
+                                                            
+                                                        </div>
+                                                        <div>
+                                                            <h4>Academic Details</h4>
+                                                            
+                                                        </div>
+                                                
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <!-- <button type="submit" class="btn btn-primary mt-2">Save Product</button> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>

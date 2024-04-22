@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #061f36b7; height: 4.5em; position: fixed; width:100vw;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:  #151b20e1; height: 4em; position: fixed; width:100vw;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,6 +31,6 @@
 
     <style>
         .nav-link{
-            color: #ffffff;
+            color: white;
         }
     </style>

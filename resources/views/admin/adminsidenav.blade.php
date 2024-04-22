@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,22 +60,10 @@ body {
                 <a class="nav-link ps-3" href="{{ route('user')}}"><b>Users</b></a>
             </div>
             <div class="nav-item m-1">
-                <a class="nav-link ps-3" href="{{ route('academic')}}"><b>Jobs</b></a>
+                <a class="nav-link ps-3" href="{{ route('job')}}"><b>Jobs</b></a>
             </div>
             <div class="nav-item m-1">
                 <a class="nav-link ps-3" href="{{ route('professional')}}"><b>Applications</b></a>
-            </div>
-            <div class="nav-item m-1">
-                <a class="nav-link ps-3" href="{{ route('language')}}"><b>Language Proficiency</b></a>
-            </div>
-            <div class="nav-item m-1">
-                <a class="nav-link ps-3" href="{{ route('working')}}"><b>Working Experience</b></a>
-            </div>
-            <div class="nav-item m-1">
-                <a class="nav-link ps-3" href="{{ route('training')}}"><b>Training & Workshop</b></a>
-            </div>
-            <div class="nav-item  m-1 ">
-                <a class="nav-link ps-3" href="{{ route('computer')}}"><b>Computer Literacy</b></a>
             </div>
         </ul>
   </div>
@@ -113,4 +101,4 @@ function closeNav() {
 </script>
    
 </body>
-</html> 
+</html>  -->

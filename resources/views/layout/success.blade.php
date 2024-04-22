@@ -1,7 +1,6 @@
-@extends('layout.app')
 @if(session('success'))
-    <div id="success-message" style="position: fixed; top: 10px; right: 2em; width: auto; height: 50px; border-radius: 3px; background-color: #46e753b7;">
-            <p style="padding: 10px;">  {{ session('success') }}</p>
+    <div id="success-message" style="position: fixed; top: 4.5em; right: 2em; width: auto; height: 50px; background-color: #058d0ca0;">
+            <p style="padding: 13px;">  {{ session('success') }}</p>
     </div>
     <script>
         setTimeout(function() {

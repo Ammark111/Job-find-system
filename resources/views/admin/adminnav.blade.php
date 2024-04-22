@@ -1,7 +1,5 @@
-@extends('layout.app')
-<div class="nav d-flex justify-content-around align-items-center" style="height: 4.5em; box-shadow: 0px 5px 4px grey;">
-    <div class="ms-5">
-        @include('admin.adminsidenav')
+<div class="nav d-flex justify-content-around align-items-center" style=" width:100%; height: 3.56em; box-shadow: 0px 5px 4px grey;">
+    <div class="">
     </div>
     <div>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -26,7 +24,7 @@
             </div>
         </nav>
     </div>
-    <li class="naV-item bg-danger">
+    <li class="nav-item" style="height: 30px; font-size: ;">
         <a class="nav-link" href="{{ route('logout') }}">LOGOUT</a>
     </li>
 </div>

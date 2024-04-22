@@ -1,15 +1,12 @@
-@extends('layout.app')
+@extends('admin.app')
 @section('title')
 
-Proffesionalism Details
+Admin dashboard
 
 @endsection
 @section('content')
-@include('layout.footer')
-<div class="main" style=">
     <div class="contain">
         <div class="body">
-            @include('admin.adminnav')
             <div class="container mt-5">
                 <h3 class="mt-5`">Admin dashboard</h3>
                 <hr>
@@ -17,5 +14,4 @@ Proffesionalism Details
             </div>
         </div>
     </div>
-</div>
 @endsection

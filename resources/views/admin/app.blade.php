@@ -5,9 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <title>
-    @yield('title')
+        @yield('title')
 </title>
 <style>
     body {
@@ -53,11 +52,24 @@
         <div class="" style="height:15vh;">
 
         </div>
-        @include('layout.sidenav')    
+        <ul class="navbar-nav mt-3">
+            <div class="nav-item m-1">
+                <a class="nav-link ps-3" href="{{ route('admin')}}"><b>Dashboard</b></a>
+            </div>
+            <div class="nav-item m-1">
+                <a class="nav-link ps-3" href="{{ route('user')}}"><b>Users</b></a>
+            </div>
+            <div class="nav-item m-1">
+                <a class="nav-link ps-3" href="{{ route('job')}}"><b>Jobs</b></a>
+            </div>
+            <div class="nav-item m-1">
+                <a class="nav-link ps-3" href="{{ route('professional')}}"><b>Applications</b></a>
+            </div>
+        </ul>
     </div>
-    <div class="main"> 
+    <div class="main">
         <div class="nav">
-            @include('layout.nav')
+            @include('admin.adminnav')
         </div>
         <div class="container mt-5" style="width: 82vw; ">
             @yield('content')
@@ -67,6 +79,5 @@
         </div>
     </div>
     <script src="/bootstrap/js/bootstrap.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html> 

@@ -1,38 +1,42 @@
-@extends('layout.app')
-
-@section('title')
-    Register
-@endsection
-
-@section('content')
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 @include('layout.navbar')
-<div class="body" style="">
-    <div style="background-color: #061f36b7;  display: flex;  align-items: center; height: 100vh;">
-    <div class="contaner d-flex justify-content-center align-item-center;" style="background-color: #061f36b7; height: 100%; width: 100%;">
-        <form  action="{{ route('newuser')}}" method="POST" class="p-5" style="margin-top: 7em;">
-        @csrf
-            <h1 class="h1 mb-4" style="font-size: 50px; color: white;">Register your new account</h1>
-           <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Phone Number</label>
-                <input type="number" class="form-control" name="phone" placeholder="0XXX XXX XXX">
+@include('layout.danger')
+<div class="body">
+    <div class="containr d-flex justify-content-center align-items-center" style=" height: 100vh; width: 100vw;  background-color: #0c3353e1;">
+        <div style="width: 55%";>
+            <h1 style="text-align: start; max-width: 85%; color: #fff; font-size: 50px">
+                <b>
+                    We're thrilled to have you join our community of job finders.
+                    <br>
+                    <br>
+                    <span style="color: orange; font-size: 50px">
+                        You're in the right place.
+                    </span>
+                </b>
+            </h1>
+        </div>
+        <form  action="{{ route('register')}}" method="POST" class="p-5 bg-light" style="height: 550px; width: 400px; margin-top: 6em;">
+            @csrf
+            <h1 class="h1 mb-4" style="font-size: 40px;">Register your new account</h1>
+            <div class="mb-3">
+                <label for="InputEmail1" class="form-label">Phone Number</label>
+                <input type="number" class="form-control" name="phone" placeholder="0XXX XXX XXX" required>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password">
+                <label for="InputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter your password" id="password" required>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" name="password1">
+                <label for="InputPassword2" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm your password" id="password_confirmation" required>
             </div>
-            <button type="submit" class="btn btn-primary  mt-2">Register</button>
+            <button type="submit" class="btn btn-primary mt-3 form-control">Register</button>
             <a href="{{ route('login')}}">
                 <p class="pt-3">Do have an account, Login here</p>
             </a>
         </form>
     </div>
-    </div>
 </div>
-@endsection
 <style>
     .body {
         width: 100vw;
@@ -45,6 +49,6 @@
     }
 
     label {
-        color: white;
+        /* color: white; */
     }
 </style>

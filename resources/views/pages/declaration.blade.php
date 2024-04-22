@@ -5,10 +5,8 @@ Decralation
 
 @endsection
 @section('content')
-<div class="main" style=">
     <div class="contain">
         <div class="body">
-            @include('layout.nav')
             <div class="container mt-5">
                 <h3 class="mt-5`">Decralation</h3>
                 <hr>
@@ -31,6 +29,5 @@ Decralation
             </div>
         </div>
     </div>  
-</div>  
 @include('layout.footer')
 @endsection
