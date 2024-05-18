@@ -1,5 +1,6 @@
 a {
     background-color: rgb(223, 223, 223);
-    background-color: rgb(24, 45, 49);
+    background-color: rgba(8, 37, 43, 0.992);
     background-color: rgb(38, 64, 70);
+    backdrop-filter: blur;
 }

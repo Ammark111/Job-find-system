@@ -47,8 +47,4 @@
         background-position: center;
         background-color: #061f3683;
     }
-
-    label {
-        /* color: white; */
-    }
 </style>

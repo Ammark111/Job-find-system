@@ -17,7 +17,7 @@ Computer Literacy Details
                             <button class="btn btn-primary me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><b>+</b> ADD</button>
                         </div>
                         <div class="container">
-                            <table class="table mt-4">
+                            <table class="table table-striped mt-4">
                                 <thead>
                                     <tr>
                                         <th class="p-3">#</th>
@@ -34,10 +34,14 @@ Computer Literacy Details
                                     @endphp
                                     @foreach($computer as $comp)
                                     <tr>
-                                        <td>{{$id}}</td>
-                                        <td>{{$comp->computer_skill}}</td>
-                                        <td>{{$comp->level}}</td>
-                                        <td>Not yet</td>
+                                        <td class="p-3">{{$id}}</td>
+                                        <td class="p-3">{{$comp->computer_skill}}</td>
+                                        <td class="p-3">{{$comp->level}}</td>
+                                        <td class="p-3">    
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#pdfModal_{{ $comp->id }}">
+                                                <i class="fa fa-eye"></i>
+                                            </button>  
+                                        </td>
                                         <td>
                                             <div class="d-flex" style="height: 30px;">
                                                 <div class="bg-primary">
@@ -59,6 +63,19 @@ Computer Literacy Details
                                             </div>
                                         </td>
                                         <td></td>
+                                        <div class="modal fade" id="pdfModal_{{ $comp->id }}" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="pdfModalLabel">{{$comp -> computer_skill}}</h5>
+                                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <img src="/storage/pdfs/{{ $comp->file }}" alt="" class="img img-fluid"> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </tr>
                                     @php 
                                         $id ++;
@@ -76,7 +93,7 @@ Computer Literacy Details
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <form action="{{ route('computer')}}" method="POST">
+                        <form action="{{ route('computer')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label"><b>Computer Skills</b></label><br>

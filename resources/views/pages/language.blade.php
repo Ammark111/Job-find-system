@@ -17,7 +17,7 @@ Language Proficiency
                             <button class="btn btn-primary me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><b>+</b> ADD</button>
                         </div>
                         <div class="container">
-                            <table class="table mt-4" >
+                            <table class="table table-striped mt-4" >
                                 <thead>
                                     <tr>
                                         <th class="p-3">#</th>
@@ -34,13 +34,13 @@ Language Proficiency
                                     @endphp
                                     @foreach($language as $lang)
                                     <tr>
-                                        <td>{{$id}}</td>
-                                        <td>{{$lang -> language_name}}</td>
-                                        <td>{{$lang -> speak}}</td>
-                                        <td>{{$lang -> read}}</td>
-                                        <td>{{$lang -> write}}</td>
+                                        <td class="p-3">{{$id}}</td>
+                                        <td class="p-3">{{$lang -> language_name}}</td>
+                                        <td class="p-3">{{$lang -> speak}}</td>
+                                        <td class="p-3">{{$lang -> read}}</td>
+                                        <td class="p-3">{{$lang -> write}}</td>
 
-                                        <td>
+                                        <td class="p-3">
                                             <div class="d-flex" style="height: 30px;">
                                                 <div class="bg-primary">
                                                     <a href="" class="btn btn-primary" style="height: 30px;" data-bs-toggle="offcanvas" aria-controls="offcanvasRight" data-bs-target="#editoffcanvasRight_{{ $lang->id }}">

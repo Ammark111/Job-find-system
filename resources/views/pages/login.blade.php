@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 @include('layout.navbar')
-@include('layout.success')
 @include('layout.danger')
-<div class="containr d-flex justify-content-center align-items-center flex-wrap" style=" height: 100vh; width: 100vw;  background-color: #0c3353e1;">
+@include('layout.success')
+<div class="body">
+    <div class="containr d-flex justify-content-center align-items-center" style=" height: 100vh; width: 100vw;  background-color: #0c3353e1;">
         <div style="width: 55%";>
             <h1 style="text-align: start; max-width: 85%; color: #fff; font-size: 50px">
                 <b>
@@ -24,7 +25,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password">
+                <input type="password" class="form-control" name="password" placeholder="Enter your password">
             </div>
             <button type="submit" class="btn btn-primary  mt-3 form-control">Login</button>
             <a href="{{ route('register')}}">
@@ -42,9 +43,5 @@
         background-size: cover;
         background-position: center;
         background-color: #061f3683;
-    }
-
-    label {
-        /* color: white; */
     }
 </style>

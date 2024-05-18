@@ -1,39 +1,83 @@
-<ul class="navbar-nav mt-3">
-    <div class="nav-item m-1">
-        <a class="nav-link ps-3" href="{{ route('dashboard')}}"><b>Dashboard</b></a>
-    </div>
-    <div class="nav-item m-1">
-        <a class="nav-link ps-3" href="{{ route('personal')}}"><b>Personal Details</b></a>
-    </div>
-    <div class="nav-item m-1">
-        <a class="nav-link ps-3" href="{{ route('academic')}}"><b>Academic Qualification</b></a>
-    </div>
-    <div class="nav-item m-1">
-        <a class="nav-link ps-3" href="{{ route('professional')}}"><b>Professionalism</b></a>
-    </div>
-    <div class="nav-item m-1">
-        <a class="nav-link ps-3" href="{{ route('language')}}"><b>Language Proficiency</b></a>
-    </div>
-    <div class="nav-item m-1">
-        <a class="nav-link ps-3" href="{{ route('working')}}"><b>Working Experience</b></a>
-    </div>
-    <div class="nav-item m-1">
-        <a class="nav-link ps-3" href="{{ route('training')}}"><b>Training & Workshop</b></a>
-    </div>
-    <div class="nav-item  m-1 ">
-        <a class="nav-link ps-3" href="{{ route('computer')}}"><b>Computer Literacy</b></a>
-    </div>
-    <div class="nav-item  m-1 ">
-        <a class="nav-link ps-3" href="{{ route('referees')}}"><b>Referees</b></a>
-    </div>
-    <div class="nav-item m-1 ">
-        <a class="nav-link ps-3" href="{{ route('other')}}"><b>Other Attachment</b></a>
-    </div>
-    <div class="nav-item m-1 ">
-        <a class="nav-link ps-3" href="{{ route('declaration')}}"><b>Decralation</b></a>
-    </div>
-    <div class="nav-item m-1 ">
-        <a class="nav-link ps-3" href="{{ route('cv')}}"><b>CV Preview</b></a>
-    </div>
-</ul>
-    
+<span class="close-btn" onclick="closeNav()">&times;</span>
+<div class="nav link mt-5">
+    <ul class="nav d-block" style="width: 100%">
+        <li class="nav-item active">
+            <a class="nav-link bg-primary" href="dashboard">
+                <i class="fa fa-home pe-2"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('personal')}}">
+                <i class="fa fa-user pe-2"></i>
+                <span>Personal Details</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('academic')}}">
+                <i class="fa fa-book pe-2"></i>
+                <span>Academic Qualification</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('professional')}}">
+                <i class="fa fa-user pe-2"></i>
+                <span>Professionalism</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('language')}}">
+                <i class="fa fa-user pe-2"></i>
+                <span>Language Proficiency</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('working')}}">
+                <i class="fa fa-user pe-2"></i>
+                <span>Working Experience</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('training')}}">
+                <i class="fa fa-user pe-2"></i>
+                <span>Training & Workshop</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('computer')}}">
+                <i class="fa fa-user pe-2"></i>
+                <span>Computer Literacy</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('referees')}}">
+                <i class="fa fa-user pe-2"></i>
+                <span>Referees</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('other')}}">
+                <i class="fa fa-user   pe-2"></i>
+                <span>Other Attachment</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('declaration')}}">
+                <i class="fa fa-pen pe-2"></i>
+                <span>Decralation</span>
+            </a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route('cv')}}">
+                <i class="fa fa-book pe-2"></i>
+                <span>CV Preview</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<style>
+    i,span {
+        font-size: 14px;
+    }
+</style>

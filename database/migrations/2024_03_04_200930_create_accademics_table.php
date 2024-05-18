@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('institute_name');
             $table->string('level');
-            $table->string('program');
-            $table->string('country');
+            // $table->string('program');
+            // $table->string('country');
             $table->string('year');
             $table->timestamps();
         });

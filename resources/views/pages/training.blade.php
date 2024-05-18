@@ -17,7 +17,7 @@ Training & Workshop Details
                             <button class="btn btn-primary me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><b>+</b> ADD</button>
                         </div>
                         <div class="container">
-                            <table class="table mt-4">
+                            <table class="table table-striped mt-4">
                                 <thead>
                                     <tr>
                                         <th class="p-3">#</th>
@@ -37,14 +37,14 @@ Training & Workshop Details
                                     @endphp
                                     @foreach($training as $train)
                                         <tr>
-                                            <td>{{ $id }}</td>
-                                            <td>{{$train->training_name}}</td>
-                                            <td>{{$train->description}}</td>
-                                            <td>{{$train->institution}}</td>
-                                            <td>Not yet</td>
-                                            <td>{{$train->start_date}}</td>
-                                            <td>{{$train->end_date}}</td>
-                                            <td>
+                                            <td class="p-3">{{ $id }}</td>
+                                            <td class="p-3">{{$train->training_name}}</td>
+                                            <td class="p-3">{{$train->description}}</td>
+                                            <td class="p-3">{{$train->institution}}</td>
+                                            <td class="p-3">Not yet</td>
+                                            <td class="p-3">{{$train->start_date}}</td>
+                                            <td class="p-3">{{$train->end_date}}</td>
+                                            <td class="p-3">
                                                 <div class="d-flex" style="height: 30px;">
                                                     <div class="bg-primary">
                                                         <a href="" class="btn btn-PRIMARY" style="height: 30px;" style="height: 30px;" data-bs-toggle="offcanvas" aria-controls="offcanvasRight" data-bs-target="#editoffcanvasRight_{{ $train->id }}">
@@ -64,7 +64,7 @@ Training & Workshop Details
                                                     </div>                                         
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td class="p-3">
                                                 
                                             </td>
                                         </tr>

@@ -17,7 +17,7 @@ Working Experience
                             <button class="btn btn-primary me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><b>+</b> ADD</button>
                         </div>
                         <div class="container">
-                            <table class="table mt-4">
+                            <table class="table table-striped mt-4">
                                 <thead>
                                     <tr>
                                         <th class="p-3">#</th>
@@ -36,13 +36,13 @@ Working Experience
                                     @endphp
                                     @foreach($working as $work)
                                     <tr>
-                                        <td>{{$id}}</td>
-                                        <td>{{$work->institute}}</td>
-                                        <td>{{$work->job}}</td>
-                                        <td>{{$work->supervisor_name}}</td>
-                                        <td>{{$work->start_date}}</td>
-                                        <td>{{$work->end_date}}</td>
-                                        <td>
+                                        <td class="p-3">{{$id}}</td>
+                                        <td class="p-3">{{$work->institute}}</td>
+                                        <td class="p-3">{{$work->job}}</td>
+                                        <td class="p-3">{{$work->supervisor_name}}</td>
+                                        <td class="p-3">{{$work->start_date}}</td>
+                                        <td class="p-3">{{$work->end_date}}</td>
+                                        <td class="p-3">
                                             <div class="d-flex" style="height: 30px;">
                                                 <div class="bg-primary">
                                                     <a href="" class="btn btn-PRIMARY" style="height: 30px;" data-bs-toggle="offcanvas" aria-controls="offcanvasRight" data-bs-target="#editoffcanvasRight_{{ $work->id }}">
@@ -62,6 +62,7 @@ Working Experience
                                                 </div>                                         
                                             </div>
                                         </td>
+                                        <td class="p-3"></td>
                                     </tr>
                                     @php 
                                         $id ++;

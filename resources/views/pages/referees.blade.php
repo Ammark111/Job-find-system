@@ -17,7 +17,7 @@ Referees Details
                             <button class="btn btn-primary me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><b>+</b> ADD</button>
                         </div>
                         <div class="container">
-                            <table class="table mt-4">
+                            <table class="table table-striped mt-4">
                                 <thead>
                                     <tr>
                                         <th class="p-3">#</th>
@@ -34,11 +34,11 @@ Referees Details
                                     @endphp
                                     @foreach($referees as $referee)
                                     <tr>
-                                        <td>{{$id}}</td>
-                                        <td>{{$referee->full_name}}</td>
-                                        <td>{{$referee->institute}}</td>
-                                        <td>{{$referee->position}}</td>
-                                        <td>
+                                        <td class="p-3">{{$id}}</td>
+                                        <td class="p-3">{{$referee->full_name}}</td>
+                                        <td class="p-3">{{$referee->institute}}</td>
+                                        <td class="p-3">{{$referee->position}}</td>
+                                        <td class="p-3">
                                             <div class="d-flex" style="height: 30px;">
                                                 <div class="bg-primary">
                                                     <a href="" class="btn btn-PRIMARY" style="height: 30px;" data-bs-toggle="offcanvas" aria-controls="offcanvasRight" data-bs-target="#editoffcanvasRight_{{ $referee->id }}">
@@ -58,7 +58,7 @@ Referees Details
                                                 </div>                                         
                                             </div>
                                         </td>
-                                        <td></td>
+                                        <td class="p-3"></td>
                                     </tr>
                                     @php 
                                         $id ++;

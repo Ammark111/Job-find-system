@@ -73,8 +73,8 @@ class MainController extends Controller
             $post = new accademic(); 
             $post -> institute_name = $req -> institute_name;
             $post -> level = $req -> level;
-            $post -> program = $req -> program;
-            $post -> country = $req -> country;
+            // $post -> program = $req -> program;
+            // $post -> country = $req -> country;
             $post -> year = $req -> year;
             $post->user_id = auth()->id(); 
             $post -> save();
@@ -226,6 +226,10 @@ class MainController extends Controller
             $post = new computer();
             $post->computer_skill = $req->computer_skill;
             $post->level = $req->level;
+            
+            $fileName = time() . '.' . $req->image->extension();
+            $req->image->storeAs('public/pdfs', $fileName);
+            $post->file = $fileName;
             $post->user_id = auth()->id(); 
             $post -> save();
             return redirect()->back()->with('success', 'Computer Skill Details added successfully');
@@ -292,7 +296,11 @@ class MainController extends Controller
     public function other(Request $req) {
         if($req->method() == 'POST') {
             $post = new attachment();
-            $post->attachment = $req-> other;
+            $post->attachment = $req->other;
+
+            $fileName = time() . '.' . $req->image->extension();
+            $req->image->storeAs('public/images', $fileName);
+            $post->file = $fileName;
             $post->user_id = auth()->id(); 
             $post -> save();
             return redirect()->back()->with('success', 'Other attachment details added successfully');

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('computer_skill');
             $table->string('level');
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }
